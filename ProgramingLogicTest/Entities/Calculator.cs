@@ -17,7 +17,7 @@ namespace Entities {
             return PieceX * QuantityX + PieceY * QuantityY;
         }
         public override string ToString() {
-            return "VALOR A PAGAR: R$" + TotalAccount();
+            return "VALOR A PAGAR: R$" + TotalAccount().ToString("F2");
         }
     }
 }

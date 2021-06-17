@@ -9,7 +9,7 @@ namespace ProgramingLogicTest {
             Console.WriteLine("\nEntre com o VALOR do PRODUTO 2 e QUANTIDADE: ");
             double priceY = double.Parse(Console.ReadLine());
             int quantityY = int.Parse(Console.ReadLine());
-            Calculator c = new Calculator(priceX, quantityX, priceY, quantityY);
+            Calculator c = new Calculator(priceX, quantityX, priceY, quantityY);                     
             Console.WriteLine(c);
         }
     }
