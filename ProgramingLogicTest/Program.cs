@@ -5,24 +5,19 @@ using System.Linq;
 namespace ProgramingLogicTest {
     class Program {
         static void Main(string[] args) {
-            List<Menu> list = new List<Menu>() {
-                new Menu(){Id = 1, Name = "HotDog", Price = 4.00},
-                new Menu(){Id = 2, Name = "X-Salada", Price = 4.50},
-                new Menu(){Id = 3, Name = "X-Bancon", Price = 5.00},
-                new Menu(){Id = 4, Name = "Torrada", Price = 2.00},
-                new Menu(){Id = 5, Name = "CocaCola", Price = 1.50}                            
-            };
-            foreach(Menu obj in list) {
-                Console.WriteLine("Id " + obj.Id + " | " + obj.Name + ", R$ " + obj.Price);
+            Console.Write("Entre com VALOR A: "); double a = double.Parse(Console.ReadLine());
+            Console.Write("Entre com VALOR B: "); double b = double.Parse(Console.ReadLine());
+            Console.Write("Entre com VALOR C: "); double c = double.Parse(Console.ReadLine());
+
+            Calculator calculator = new Calculator(a, b, c);
+            if(calculator.Verif() == true) {
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine(calculator);
             }
-            Console.WriteLine();
-            Console.WriteLine("-------------------------------------------");
-            Console.Write("Digite o Id do produto: "); int orderId = int.Parse(Console.ReadLine());
-            Console.Write("Digite a quantidade do produto: "); double amount = double.Parse(Console.ReadLine());          
-            Console.WriteLine("-------------------------------------------");
-            Console.WriteLine();
-            Order o = new Order(orderId, amount);
-            Console.WriteLine(o);
+            else {
+                Console.WriteLine("-------------------------------");
+                Console.WriteLine("Impossivel calcular");
+            }
         }
     }
 }
