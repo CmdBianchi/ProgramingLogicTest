@@ -5,19 +5,17 @@ using System.Linq;
 namespace ProgramingLogicTest {
     class Program {
         static void Main(string[] args) {
-            Console.Write("Entre com VALOR A: "); double a = double.Parse(Console.ReadLine());
-            Console.Write("Entre com VALOR B: "); double b = double.Parse(Console.ReadLine());
-            Console.Write("Entre com VALOR C: "); double c = double.Parse(Console.ReadLine());
+            Console.WriteLine("Digite senha: ");
+            int pw = int.Parse(Console.ReadLine());
+            VerifyPassWord vpw = new VerifyPassWord(pw);
 
-            Calculator calculator = new Calculator(a, b, c);
-            if(calculator.Verif() == true) {
-                Console.WriteLine("--------------------------------");
-                Console.WriteLine(calculator);
+            while (vpw.Verify() != true) {
+                Console.WriteLine("INVALID PASSWORD !!!");
+                pw = int.Parse(Console.ReadLine());
+                vpw = new VerifyPassWord(pw);
             }
-            else {
-                Console.WriteLine("-------------------------------");
-                Console.WriteLine("Impossivel calcular");
-            }
+
+            Console.WriteLine("PASS GRANTED");
         }
     }
 }
