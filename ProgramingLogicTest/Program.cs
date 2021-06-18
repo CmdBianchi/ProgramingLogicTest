@@ -1,21 +1,28 @@
 ﻿using System;
-using Entities;
 using System.Collections.Generic;
 using System.Linq;
 namespace ProgramingLogicTest {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Digite senha: ");
-            int pw = int.Parse(Console.ReadLine());
-            VerifyPassWord vpw = new VerifyPassWord(pw);
+            Console.Write("How many values? ");
+            int quantiy = int.Parse(Console.ReadLine());
+            List<int> list = new List<int>(); //-----------------> Declaração da lista
 
-            while (vpw.Verify() != true) {
-                Console.WriteLine("INVALID PASSWORD !!!");
-                pw = int.Parse(Console.ReadLine());
-                vpw = new VerifyPassWord(pw);
+            for (int i = 1; i <= quantiy; i++) {         //-----------------> Quantidade de Valores a ser adicionados. 
+                Console.WriteLine("Number #" + i + ":");
+                int x = int.Parse(Console.ReadLine());
+                list.Add(x);
             }
 
-            Console.WriteLine("PASS GRANTED");
-        }
+            Console.WriteLine();
+            Console.WriteLine("---------------");
+            foreach (int obj in list) {   //-----------------> Printa valores da lista    
+                Console.WriteLine(obj);
+            }
+
+            int[] outPut = list.ToArray();
+            
+
+        }                  
     }
 }
